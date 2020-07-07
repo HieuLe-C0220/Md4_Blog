@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xàm blog</title>
+</head>
+<body>
+<div class="col-md-10 blogShort">
+    <h1 th:text="${blog.title}"></h1>
+
+    <article><p th:text="${blog.content}"></p></article>
+    <input type="hidden" id="blogId" th:value="${blog.id}" />
+<!--    <button type="button" class="btn btn-primary" onclick="likeBlog()">-->
+<!--        Like <span id="blogLikes" th:text="${blog.likes}" class="badge badge-light"></span>-->
+<!--    </button>-->
+    <a th:href="@{/blog/edit/__${blog.id}__}">Sửa</a>
+    <a th:href="@{/blog/delete-Blog/__${blog.id}__}">Xoá</a>
+    <a class="btn btn-blog pull-right marginBottom10" href="/">BACK</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Blog</title>
+</head>
+<body>
+    <div>
+        <form method="post" th:action="@{/save-Blog}" th:object="${blog}">
+            <th:block th:if="${blog.id != null}">
+                <input type="hidden" th:field="*{id}">
+            </th:block>
+            <p>Title</p>
+            <input type="text" th:field="*{title}" />
+
+            <p>Content</p>
+            <textarea th:field="*{content}" cols="50" rows="30"></textarea>
+
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
